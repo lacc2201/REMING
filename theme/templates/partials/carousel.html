@@ -1,0 +1,215 @@
+{% load static %}
+
+<div x-data="{
+        activeSlide: 1,
+        totalSlides: 3,
+        direction: 'right',
+        autoplay: true,
+        init() {
+            if (this.autoplay) {
+                setInterval(() => {
+                    this.direction = 'right';
+                    this.activeSlide = this.activeSlide % this.totalSlides + 1;
+                }, 7000);
+            }
+        }
+    }" 
+    class="relative w-full overflow-hidden"
+    @keydown.right.window="direction = 'right'; activeSlide = activeSlide % totalSlides + 1"
+    @keydown.left.window="direction = 'left'; activeSlide = activeSlide > 1 ? activeSlide - 1 : totalSlides">
+    
+    <!-- Slides Container -->
+    <div class="relative w-full h-[500px] md:h-[600px]">
+        <!-- Slide 1 -->
+        <div x-show="activeSlide === 1" 
+             x-transition:enter="transition ease-out [800ms]"
+             x-transition:enter-start="opacity-0 transform translate-x-10"
+             x-transition:enter-end="opacity-100 transform translate-x-0"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 transform translate-x-0"
+             x-transition:leave-end="opacity-0 transform -translate-x-10" 
+             class="absolute inset-0">
+            
+            <img src="{% static 'images/slide1.jpg' %}" 
+                 class="w-full h-full object-cover transform transition-all duration-1000 scale-100 hover:scale-105">
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent flex items-center justify-center">
+                <div class="text-left px-10 space-y-4">
+                    <h2 class="text-4xl md:text-6xl font-semibold text-blue-900 transform transition-all duration-500 delay-150"
+                        x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', '-translate-x-20', 'scale-90');
+                            setTimeout(() => $el.classList.remove('opacity-0', '-translate-x-20', 'scale-90'), 100);
+                        })"
+                        class="opacity-0 -translate-x-20 scale-90"
+                        style="transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+                        EQUIPOS MÉDICOS CON GARANTÍA
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-600 transform transition-all duration-500 delay-300"
+                       x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', 'translate-y-8', 'blur-sm');
+                            setTimeout(() => $el.classList.remove('opacity-0', 'translate-y-8', 'blur-sm'), 300);
+                        })"
+                        class="opacity-0 translate-y-8 blur-sm">
+                        Reparación Equipo Médico Ingeniería
+                    </p>
+                    
+                    <div class="mt-5 flex gap-4 transform transition-all"
+                        x-transition:enter="transition ease-out duration-500 delay-500"
+                        x-transition:enter-start="opacity-0 translate-y-8"
+                        x-transition:enter-end="opacity-100 translate-y-0">
+                        <a href="#" class="px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Contactos
+                        </a>
+                        <a href="#" class="px-6 py-3 border-2 border-blue-800 text-blue-800 rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1">
+                            Equipo Médico →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div x-show="activeSlide === 2" 
+             x-transition:enter="transition ease-out [800ms]"
+             x-transition:enter-start="opacity-0 transform translate-x-10"
+             x-transition:enter-end="opacity-100 transform translate-x-0"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 transform translate-x-0"
+             x-transition:leave-end="opacity-0 transform -translate-x-10" 
+             class="absolute inset-0">
+            
+            <img src="{% static 'images/slide2.jpg' %}" 
+                 class="w-full h-full object-cover transform transition-all duration-1000 scale-100 hover:scale-105">
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent flex items-center justify-center">
+                <div class="text-left px-10 space-y-4">
+                    <h2 class="text-4xl md:text-6xl font-semibold text-blue-900 transform transition-all duration-500 delay-150"
+                        x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', '-translate-x-20', 'scale-90');
+                            setTimeout(() => $el.classList.remove('opacity-0', '-translate-x-20', 'scale-90'), 100);
+                        })"
+                        class="opacity-0 -translate-x-20 scale-90"
+                        style="transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+                        SERVICIO TÉCNICO DE CALIDAD
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-600 transform transition-all duration-500 delay-300"
+                       x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', 'translate-y-8', 'blur-sm');
+                            setTimeout(() => $el.classList.remove('opacity-0', 'translate-y-8', 'blur-sm'), 300);
+                        })"
+                        class="opacity-0 translate-y-8 blur-sm">
+                        Reparación Equipo Médico Ingeniería
+                    </p>
+                    
+                    <div class="mt-5 flex gap-4 transform transition-all"
+                        x-transition:enter="transition ease-out duration-500 delay-500"
+                        x-transition:enter-start="opacity-0 translate-y-8"
+                        x-transition:enter-end="opacity-100 translate-y-0">
+                        <a href="#" class="px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Contactos
+                        </a>
+                        <a href="#" class="px-6 py-3 border-2 border-blue-800 text-blue-800 rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1">
+                            Equipo Médico →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div x-show="activeSlide === 3" 
+             x-transition:enter="transition ease-out [800ms]"
+             x-transition:enter-start="opacity-0 transform translate-x-10"
+             x-transition:enter-end="opacity-100 transform translate-x-0"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 transform translate-x-0"
+             x-transition:leave-end="opacity-0 transform -translate-x-10" 
+             class="absolute inset-0">
+            
+            <img src="{% static 'images/slide3.jpg' %}" 
+                 class="w-full h-full object-cover transform transition-all duration-1000 scale-100 hover:scale-105">
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent flex items-center justify-center">
+                <div class="text-left px-10 space-y-4">
+                    <h2 class="text-4xl md:text-6xl font-semibold text-blue-900 transform transition-all duration-500 delay-150"
+                        x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', '-translate-x-20', 'scale-90');
+                            setTimeout(() => $el.classList.remove('opacity-0', '-translate-x-20', 'scale-90'), 100);
+                        })"
+                        class="opacity-0 -translate-x-20 scale-90"
+                        style="transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+                        SOMOS IMPORTADORES
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-600 transform transition-all duration-500 delay-300"
+                       x-init="$nextTick(() => {
+                            $el.classList.add('opacity-0', 'translate-y-8', 'blur-sm');
+                            setTimeout(() => $el.classList.remove('opacity-0', 'translate-y-8', 'blur-sm'), 300);
+                        })"
+                        class="opacity-0 translate-y-8 blur-sm">
+                        Reparación Equipo Médico Ingeniería
+                    </p>
+                    
+                    <div class="mt-5 flex gap-4 transform transition-all"
+                        x-transition:enter="transition ease-out duration-500 delay-500"
+                        x-transition:enter-start="opacity-0 translate-y-8"
+                        x-transition:enter-end="opacity-100 translate-y-0">
+                        <a href="#" class="px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Contactos
+                        </a>
+                        <a href="#" class="px-6 py-3 border-2 border-blue-800 text-blue-800 rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1">
+                            Equipo Médico →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles Mejorados -->
+    <button @click="direction = 'left'; activeSlide = activeSlide > 1 ? activeSlide - 1 : totalSlides" 
+            class="absolute top-1/2 left-5 transform -translate-y-1/2 bg-white/80 hover:bg-white p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+        <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+    </button>
+    
+    <button @click="direction = 'right'; activeSlide = activeSlide % totalSlides + 1" 
+            class="absolute top-1/2 right-5 transform -translate-y-1/2 bg-white/80 hover:bg-white p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+        <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+    </button>
+
+    <!-- Indicadores Dinámicos -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <template x-for="i in totalSlides" :key="i">
+            <button @click="activeSlide = i" 
+                    :class="activeSlide === i ? 'w-8 bg-blue-900' : 'w-4 bg-gray-300'" 
+                    class="h-2 rounded-full transition-all duration-300 hover:bg-blue-700"></button>
+        </template>
+    </div>
+</div>
+
+<style>
+    @keyframes buttonEntrance {
+        0% {
+            opacity: 0;
+            transform: translateY(20px) rotateX(-45deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+    }
+
+    @keyframes textGlow {
+        0% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+        50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+        100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>

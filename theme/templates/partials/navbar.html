@@ -1,33 +1,141 @@
-<nav class="bg-white shadow-md w-full fixed top-0 left-0 z-50">
+<nav class="bg-white shadow-md w-full fixed top-0 left-0 z-50 transition-all duration-300" id="main-nav">
     <div class="container mx-auto flex justify-between items-center p-4 lg:px-8">
         <!-- Logo -->
-        <a href="#" class="flex items-center space-x-4">
-            <img src="/static/images/logo.png" alt="Reming Logo" class="h-12 md:h-14">
+        <a href="#" class="flex items-center space-x-4 focus:outline-none focus:ring-2 focus:ring-blue-900 rounded-lg">
+            <img src="/static/images/logo.png" alt="Reming Logo" 
+                 class="h-12 md:h-14 w-auto transition-transform duration-300 hover:scale-105"
+                 srcset="/static/images/logo.png 1x, /static/images/logo@2x.png 2x">
         </a>
 
-        <!-- Menú -->
-        <ul class="hidden md:flex space-x-4 lg:space-x-6 text-blue-700 font-medium text-sm md:text-base lg:text-lg">
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">INICIO</a></li>
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">NOSOTROS</a></li>
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">SERVICIO TÉCNICO</a></li>
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">BLOG</a></li>
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">VIDEOS</a></li>
-            <li><a href="#" class="hover:text-blue-900 transition duration-300">CONTACTO</a></li>
+        <!-- Menú hamburguesa (móvil) -->
+        <button id="menu-toggle" 
+                class="md:hidden text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-900 rounded p-2"
+                aria-label="Menú principal"
+                aria-expanded="false">
+            <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            <i class="fas fa-times text-2xl hidden" id="close-icon"></i>
+        </button>
+
+        <!-- Menú desktop -->
+        <ul class="hidden md:flex space-x-4 lg:space-x-6 items-center text-blue-700 font-medium text-base">
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">INICIO</a></li>
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">NOSOTROS</a></li>
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">SERVICIO TÉCNICO</a></li>
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">BLOG</a></li>
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">VIDEOS</a></li>
+            <li><a href="#" class="hover:text-blue-900 transition-colors duration-300 px-2 py-1 rounded active:bg-blue-50 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full">CONTACTO</a></li>
         </ul>
 
-        <!-- Sección destacada -->
-        <div class="hidden md:flex items-center bg-blue-900 text-white px-4 py-2 rounded-lg text-xs md:text-sm lg:text-base font-semibold shadow-md">
-            EQUIPO MÉDICO Y ACCESORIOS
+        <!-- Sección destacada y redes -->
+        <div class="hidden md:flex items-center gap-4">
+            <div class="bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-blue-800 transition-colors duration-300">
+                EQUIPO MÉDICO Y ACCESORIOS
+            </div>
+            <div class="flex space-x-3 text-blue-700 text-lg">
+                <a href="https://www.facebook.com/REMING.EC" 
+                   class="hover:text-blue-900 transition-colors duration-300"
+                   aria-label="Facebook"
+                   target="_blank"
+                   rel="noopener">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/reming76" 
+                   class="hover:text-blue-900 transition-colors duration-300"
+                   aria-label="Instagram"
+                   target="_blank"
+                   rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
         </div>
+    </div>
 
-        <!-- Redes sociales -->
-        <div class="hidden md:flex space-x-3 text-blue-700 text-lg">
-            <a href="https://www.facebook.com/REMING.EC" class="hover:text-blue-900 transition duration-300">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/reming76?igsh=MXdxaWJ5MGhhdDJjMw==" class="hover:text-blue-900 transition duration-300">
-                <i class="fab fa-instagram"></i>
-            </a>
+    <!-- Menú móvil -->
+    <div id="mobile-menu" 
+         class="md:hidden bg-white absolute top-full left-0 w-full shadow-lg overflow-hidden transition-all duration-300 max-h-0">
+        <div class="container mx-auto p-4 lg:px-8">
+            <ul class="flex flex-col space-y-3 text-blue-700 font-medium">
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">INICIO</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">NOSOTROS</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">SERVICIO TÉCNICO</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">BLOG</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">VIDEOS</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-blue-50 rounded transition-colors duration-300">CONTACTO</a></li>
+            </ul>
+            
+            <div class="mt-4 pt-4 border-t border-blue-100">
+                <div class="bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-semibold text-center mb-4">
+                    EQUIPO MÉDICO Y ACCESORIOS
+                </div>
+                
+                <div class="flex justify-center space-x-4 text-lg">
+                    <a href="https://www.facebook.com/REMING.EC" 
+                       class="hover:text-blue-900 transition-colors duration-300"
+                       aria-label="Facebook"
+                       target="_blank"
+                       rel="noopener">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/reming76" 
+                       class="hover:text-blue-900 transition-colors duration-300"
+                       aria-label="Instagram"
+                       target="_blank"
+                       rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mainNav = document.getElementById('main-nav');
+
+    // Toggle mobile menu
+    function toggleMenu() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.style.maxHeight = isExpanded ? '0' : `${mobileMenu.scrollHeight}px`;
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    // Close menu on click outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.style.maxHeight = '0';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            mobileMenu.style.maxHeight = '0';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
+    // Navbar scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            mainNav.classList.add('-translate-y-full');
+        } else {
+            mainNav.classList.remove('-translate-y-full');
+        }
+        lastScroll = currentScroll;
+    });
+
+    menuToggle.addEventListener('click', toggleMenu);
+</script>
