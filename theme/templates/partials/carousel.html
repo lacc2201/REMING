@@ -202,5 +202,74 @@ class="relative w-full overflow-hidden group">
         </template>
     </div>
 </div>
+<!-- Quiénes Somos Section -->
+<section class="py-20 bg-gradient-to-tr from-gray-50 to-blue-50">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <!-- Text Content -->
+            <div class="lg:w-1/2 space-y-6 order-2 lg:order-1">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 relative">
+                    <span class="relative z-10">Conoce Nuestra</span>
+                    <span class="absolute bottom-0 left-0 text-6xl opacity-10 font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800">
+                        Experiencia
+                    </span>
+                </h2>
+                
+                <div class="space-y-5">
+                    <p class="text-lg text-gray-600 leading-relaxed transition-all duration-300 hover:bg-white hover:shadow-md p-4 rounded-xl">
+                        En <strong class="text-blue-700">REMING</strong> combinamos tecnología de vanguardia con expertise médico para ofrecer soluciones integrales en equipamiento de endoscopía. Desde 2020, somos referentes en Ecuador en mantenimiento y reparación de equipos médicos.
+                    </p>
+                    
+                    <div class="pl-4 border-l-4 border-blue-600 bg-blue-50 p-4 rounded-r-lg transform hover:translate-x-2 transition-all duration-500">
+                        <p class="text-gray-600 italic">
+                            Nuestro equipo de <strong>Ingenieros Biomédicos Certificados</strong> cuenta con más de una década de experiencia garantizando los más altos estándares de calidad.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="mt-8 animate-bounce-horizontal">
+                    <a href="#" class="inline-flex items-center px-6 py-3.5 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl group">
+                        <span>Explorar Servicios</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="lg:w-1/2 order-1 lg:order-2 relative group">
+                <div class="grid grid-cols-5 grid-rows-5 gap-4 h-96">
+                    <!-- Main Image -->
+                    <div class="col-span-3 row-span-5 relative overflow-hidden rounded-2xl shadow-2xl transform rotate-1 hover:rotate-0 transition-all duration-500">
+                        <img src="{% static 'images/quienes-somos-1.jpg' %}" 
+                             class="w-full h-full object-cover transform transition-all duration-700 hover:scale-110"
+                             loading="lazy"
+                             alt="Técnicos especializados">
+                    </div>
+                    
+                    <!-- Small Image 1 -->
+                    <div class="col-span-2 row-span-3 col-start-4 row-start-1 relative overflow-hidden rounded-xl shadow-lg transform -rotate-2 hover:rotate-0 transition-all duration-500 z-10">
+                        <img src="{% static 'images/quienes-somos-2.jpg' %}" 
+                             class="w-full h-full object-cover transform transition-all duration-700 hover:scale-110"
+                             loading="lazy"
+                             alt="Equipo de última generación">
+                    </div>
+                    
+                    <!-- Small Image 2 -->
+                    <div class="col-span-2 row-span-3 col-start-4 row-start-4 relative overflow-hidden rounded-xl shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-500">
+                        <img src="{% static 'images/quienes-somos-3.jpg' %}" 
+                             class="w-full h-full object-cover transform transition-all duration-700 hover:scale-110"
+                             loading="lazy"
+                             alt="Certificaciones internacionales">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply transition-all duration-500 hover:bg-transparent"></div>
+                    </div>
+                    
+                    <!-- Decorative Element -->
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 border-4 border-blue-200 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

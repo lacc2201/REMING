@@ -1,0 +1,175 @@
+{% load static %}
+
+<section class="py-16 relative">
+    <!-- Fondo con opacidad -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gray-100/80 backdrop-blur-sm"></div>
+      <img 
+        src="{% static 'images/valores-corporativos.jpg' %}" 
+        alt="Fondo valores corporativos"
+        class="w-full h-full object-cover opacity-20"
+      >
+    </div>
+  
+    <div class="container mx-auto px-6 md:px-12 xl:px-24 relative z-10">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-3xl font-bold text-blue-900 mb-6 relative pb-6">
+          VALORES CORPORATIVOS
+          <div class="absolute bottom-0 left-1/2 w-24 h-1 bg-blue-500 transform -translate-x-1/2"></div>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+          Nos caracterizamos por ofrecer servicios de alta calidad, con respaldo técnico y experiencia.
+        </p>
+      </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 lg:gap-8">
+      <!-- Card Template -->
+      <div class="group bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 h-full flex flex-col">
+        <div class="text-center mb-2">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-blue-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4M12 3l7.517 3.236c.331.14.55.465.55.829 0 7.534-3.356 11.74-8.067 13.97a.884.884 0 01-.903 0C5.356 18.805 2 14.599 2 7.065c0-.364.219-.689.55-.829L10.067 3.1c.243-.105.523-.105.766 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-blue-900 mb-2">Responsabilidad</h3>
+        </div>
+        <p class="text-gray-600 text-center leading-relaxed flex-grow text-xs">
+          Somos referentes en el mercado como empresa responsable, con principios sólidos 
+          y una promesa de valor transparente que guía todas nuestras acciones.
+        </p>
+      </div>
+
+      <!-- Repetir misma estructura para las demás cards cambiando:
+           - Color del icono (mantener blue-700)
+           - SVG path
+           - Título
+           - Texto
+           - bg-color del icon container (mantener blue-50)
+      -->
+
+      <!-- Card 2: Empatía -->
+      <div class="group bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 h-full flex flex-col">
+        <div class="text-center mb-2">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-blue-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-blue-900 mb-2">Empatía</h3>
+        </div>
+        <p class="text-gray-600 text-center leading-relaxed flex-grow text-xs">
+          Nuestros colaboradores son el corazón de la empresa. Fomentamos su desarrollo 
+          profesional y personal con programas de crecimiento continuo.
+        </p>
+      </div>
+
+      <!-- Card 3: Honestidad -->
+      <div class="group bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 h-full flex flex-col">
+        <div class="text-center mb-2">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-blue-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"
+              />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-blue-900 mb-2">Honestidad</h3>
+        </div>
+        <p class="text-gray-600 text-center leading-relaxed flex-grow text-xs">
+          Mantenemos absoluta transparencia en todas nuestras operaciones, rechazando 
+          cualquier práctica que comprometa nuestros principios éticos.
+        </p>
+      </div>
+
+        <!-- Card 4: Calidad -->
+        <div class="group bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 h-full flex flex-col">
+            <div class="text-center mb-2">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-10 h-10 text-blue-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                    />
+                </svg>
+            </div>
+            <h3 class="text-base font-bold text-blue-900 mb-2">Calidad</h3>
+            </div>
+            <p class="text-gray-600 text-center leading-relaxed flex-grow text-xs">
+                Optimizamos recursos y procesos para superar expectativas, implementando 
+                estándares internacionales en todos nuestros servicios.
+            </p>
+        </div>
+
+      <!-- Card 5: Mejoramiento -->
+      <div class="group bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 h-full flex flex-col">
+        <div class="text-center mb-2">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-blue-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-blue-900 mb-2">Mejoramiento</h3>
+        </div>
+        <p class="text-gray-600 text-center leading-relaxed flex-grow text-xs">
+          Innovamos constantemente con programas de capacitación y tecnología de vanguardia 
+          para mantener el liderazgo en nuestro sector.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+{% load static %}
+
+<footer class="bg-blue-900 text-white py-10">
+    <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <!-- Sección Email -->
+        <div class="flex flex-col items-center">
+            <img src="{% static 'icons/email-icon.svg' %}" alt="Email" class="w-12 mb-4">
+            <h3 class="text-lg font-semibold mb-2">EMAIL</h3>
+            <p class="mb-2">Escríbenos a:</p>
+            <a href="mailto:info@reming-ec.com" class="text-yellow-400 hover:underline">info@reming-ec.com</a>
+        </div>
+
+        <!-- Sección Dirección -->
+        <div class="flex flex-col items-center">
+            <img src="{% static 'icons/location-icon.svg' %}" alt="Dirección" class="w-12 mb-4">
+            <h3 class="text-lg font-semibold mb-2">DIRECCIÓN</h3>
+            <p>Av. República De El Salvador N.35-60</p>
+            <p>y Av. Portugal. Edificio Vitra, oficina 404</p>
+        </div>
+
+        <!-- Sección Teléfono -->
+        <div class="flex flex-col items-center">
+            <img src="{% static 'icons/phone-icon.svg' %}" alt="Teléfono" class="w-12 mb-4">
+            <h3 class="text-lg font-semibold mb-2">TELÉFONO</h3>
+            <p><a href="tel:+593982839113" class="text-yellow-400 hover:underline">+593 982839113</a></p>
+            <p><a href="tel:+593959938084" class="text-yellow-400 hover:underline">+593 959938084</a></p>
+        </div>
+    </div>
+
+    <div class="border-t border-gray-500 mt-10 pt-5">
+        <div class="max-w-6xl mx-auto px-5 flex flex-col items-center">
+            <img src="{% static 'images/logo.png' %}" alt="Logo de REMING" class="w-15 mb-4">
+            <ul class="flex space-x-6 text-sm mb-4">
+                <li><a href="#" class="hover:underline">NOSOTROS</a></li>
+                <li><a href="#" class="hover:underline">SERVICIOS</a></li>
+                <li><a href="#" class="hover:underline">EQUIPOS</a></li>
+                <li><a href="#" class="hover:underline">VIDEOS</a></li>
+                <li><a href="#" class="hover:underline">CONTACTO</a></li>
+            </ul>
+            <div class="flex space-x-4 mb-4">
+                <a href="https://facebook.com/reming" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'icons/facebook-icon.svg' %}" alt="Facebook" class="w-6">
+                </a>
+                <a href="https://instagram.com/reming" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'icons/instagram-icon.svg' %}" alt="Instagram" class="w-6">
+                </a>
+            </div>
+        </div>
+        <p class="text-center text-sm mt-4">
+            Copyright © 2022 
+            <span class="font-semibold">REMING</span> - Servicio técnico de equipos de endoscopía Quito - Otro Producto de Kraken Digital
+        </p>
+    </div>
+</footer>
