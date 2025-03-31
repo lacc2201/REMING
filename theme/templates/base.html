@@ -7,6 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="icon" type="image/png" href="{% static 'images/logo-head.png' %}">
+		<style>
+			link[rel="icon"] {
+				width: 10px;
+				height: 60px;
+			}
+		</style>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		{% tailwind_css %}
 	</head>
@@ -17,9 +23,10 @@
 		
 		<main>
 			{% include 'partials/carousel.html' %}
-
 			{% include 'partials/valores_corporativos.html' %}
-
+			{% include 'partials/tipo_equipos_section.html' %}
+			{% include 'partials/neomedic_section.html' %}
+			{% include 'partials/blog_section.html' %}
 			{% block content %}{% endblock %}
 		</main>
 		

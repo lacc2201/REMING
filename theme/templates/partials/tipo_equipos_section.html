@@ -1,0 +1,43 @@
+{% load static %}
+
+<section class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-blue-900 mb-6">
+            Reparación Equipo Médico Ingeniería
+        </h2>
+        <h3 class="text-2xl font-semibold text-blue-700 mb-8">
+            TIPO DE EQUIPOS QUE REPARAMOS
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform duration-300 w-44 mx-auto transform hover:scale-105">
+                <img src="{% static 'images/videogastroscopio.jpg' %}" alt="Videogastroscopio" class="w-full h-52 object-cover">
+                <div class="bg-blue-700 text-white py-2 text-sm font-semibold">
+                    Videogastroscopio
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform duration-300 w-44 mx-auto transform hover:scale-105">
+                <img src="{% static 'images/videocolonoscopio.jpg' %}" alt="Videocolonoscopio" class="w-full h-52 object-cover">
+                <div class="bg-blue-700 text-white py-2 text-sm font-semibold">
+                    Videocolonoscopio
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform duration-300 w-44 mx-auto transform hover:scale-105">
+                <img src="{% static 'images/videoduodenoscopio.jpg' %}" alt="Videoduodenoscopio" class="w-full h-52 object-cover">
+                <div class="bg-blue-700 text-white py-2 text-sm font-semibold">
+                    Videoduodenoscopio
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform duration-300 w-44 mx-auto transform hover:scale-105">
+                <img src="{% static 'images/videobroncoscopio.jpg' %}" alt="Videobroncoscopio" class="w-full h-52 object-cover">
+                <div class="bg-blue-700 text-white py-2 text-sm font-semibold">
+                    Videobroncoscopio
+                </div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <a href="#" class="inline-block bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-300">
+                Ver más
+            </a>
+        </div>
+    </div>
+</section>
